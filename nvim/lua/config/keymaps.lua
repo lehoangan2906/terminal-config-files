@@ -19,26 +19,24 @@ keymap.set("n", "<Leader>D", '"_D')
 keymap.set("v", "<Leader>d", '"_d')
 keymap.set("v", "<Leader>D", '"_D')
 
--- Increment/Decrement
+-- Increment/decrement
 keymap.set("n", "+", "<C-a>")
-keymap.set("n", "-", "<C-x")
+keymap.set("n", "-", "<C-x>")
 
--- When you press "d" and "w" in normal mode,
--- this mapping will enter visual block mode,
--- select the entire line where your cursor is, and then delete it.
+-- Delete a word backwards
 keymap.set("n", "dw", 'vb"_d')
 
--- pressing <C-a> to SELECT ALL content and entering visual mode for editing
+-- Select all
 keymap.set("n", "<C-a>", "gg<S-v>G")
 
--- save with root permission
--- vim.api.nvim_create_user_command('W', 'w !sudo tee > /dev/null %', {})
+-- Save with root permission (not working for now)
+--vim.api.nvim_create_user_command('W', 'w !sudo tee > /dev/null %', {})
 
--- disable continuations
+-- Disable continuations
 keymap.set("n", "<Leader>o", "o<Esc>^Da", opts)
 keymap.set("n", "<Leader>O", "O<Esc>^Da", opts)
 
--- indents the current line or inserts spaces
+-- Jumplist
 keymap.set("n", "<C-m>", "<C-i>", opts)
 
 -- New tab
